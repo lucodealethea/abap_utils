@@ -1,3 +1,8 @@
+Data Foundations for Transactionals:
+crmd_orderadm_h, crmd_orderadm_i, crm_jest, bbp_pdhgp, bbp_pdigp, bbpc_proc_type_t, bbp_pdhsc, bbp_pdisc,...
+
+The following flow is on business object type BUS2202 many to one BUS2200:
+
 (ZTV_RFX_GUID_RFQ_QUOT)				            (ZTV_SC_ELIMINADOS)
 
 ZBI_GUIDSRFQT					                    ZBI_SC_ELIM
