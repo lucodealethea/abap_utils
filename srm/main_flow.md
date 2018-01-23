@@ -38,3 +38,5 @@ LEILAO_LIC_COT.CAV_SC_RFQ_Q_ANALITICO
 CAV_STXL_BY_REP_OBJID
 
 using context in case long text (as per CAV_STXL_BY_REP_OBJID ) is not required
+
+IDT will also have list of values in its universes querying mainly ABAP CDS for prompts in WebI
