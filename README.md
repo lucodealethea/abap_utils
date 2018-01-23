@@ -14,5 +14,9 @@ https://wiki.scn.sap.com/wiki/display/SRM/SRM+Tables?preview=/44272/190906502/Ma
 
 Due to restriction to ABAP 740 SPS11 (no table function available yet), it has been required to further model with hana table functions (canonical equivalent of scripted calculated view). 
 
+Note: ABAP CDS Table Function are database procedures directly in the ABAP layer
+
 ### the current repository could be replicated in any SRM based Netweaver >= ABAP 740 SPS9 using ABAPGIT
+
+
 
