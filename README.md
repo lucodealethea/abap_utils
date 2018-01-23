@@ -5,7 +5,7 @@ Utilities used in former projects
 
 Contains ABAP CDS and Hana Calculated Views to bring in memory flow to IDT and Webi
 
-### Modeling in SRM is highly versatile due to the OO approach.
+### ERM in SRM is highly versatile for in-memory views and flows due to the OO approach
 
 (Shopping Cart, RFQ, Quotation, Contract and Order ) are modeled as different Business Object Types 
 in a limited number of joined tables, making it a perfect fit for high grain data foundation modeling in ABAP CDS.
