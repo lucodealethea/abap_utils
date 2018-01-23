@@ -1,0 +1,2084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Templates for application APIs</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZRSAXTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZRSAX</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_DATA</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung von Bewegungsdaten</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-ISOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-UPDMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-DATAPAKID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PRIVATE_MODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CALLMODE</PARAMETER>
+       <DBFIELD>ROARCHD200-CALLMODE</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_FIELDS</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_SOURCE_STRUCTURE_NAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>InfoSource Name</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PRIVATE_MODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CALLMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Selection Criteria</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_SOURCE_STRUCTURE_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 015</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_DATA_SIMPLE</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung von Bewegungsdaten</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SRSC_S_IF_SIMPLE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-DSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-READONLY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-T_FIELDS</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <DBSTRUCT>SFLIGHT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_DATA_WITH_ARCHIV</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung von Bewegungsdaten (aus Archiv und Datenbank)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-ISOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-UPDMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-DATAPAKID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PRIVATE_MODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CALLMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAZT_CALLMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_FIELDS</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <DBSTRUCT>SBOOK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_SELECT</PARAMETER>
+       <DBSTRUCT>RSSELECT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>CANCELED_BY_USER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PRIVATE_MODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CALLMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 015</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CANCELED_BY_USER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 016</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_MASTER_DATA</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung von Stammdaten (und Texten ab BW 2.0)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CHABASNM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-CHABASNM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-UPDMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-DATAPAKID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_TIMEINT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_TIMEINT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_FIELDS</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_SOURCE_STRUCTURE_NAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CHABASNM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Name of Basic Characteristic</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_TIMEINT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Selection Criteria</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_SOURCE_STRUCTURE_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_SEGM</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung von Bewegungsdaten</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ROOSGEN-RLOGSYS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-UPDMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-ISOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_PARAMS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ROEXTRPRMS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-DATAPAKID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <DBSTRUCT>RSSEGFDSEL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ISOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_PARAMS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_BIW_GET_TEXTS</FUNCNAME>
+     <SHORT_TEXT>Nicht für BW &gt;= 2.0 verwenden !!! / Template: Übertragung von Texten</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CHABASNM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-CHABASNM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-UPDMODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-DATAPAKID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_TIMEINT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_TIMEINT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_TEXTS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_TEXTS</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CHABASNM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Name of Basic Characteristic</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DATAPAKID</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_TIMEINT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language vector</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Selection Criteria</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_ACTIVATE_CONTENT</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: Business Content Aktivieren</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_S_CS_DS</PARAMETER>
+       <TYP>RSAOT_CS_DSOURCE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <TYP>RSAOT_T_MESSAGES</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_S_CS_DS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_AFTER_IMPORT</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: After Import</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <TYP>RSAOT_OLTPSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <TYP>RSAOT_OBJVERS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <TYP>RSAOT_T_MESSAGES</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_DELETE_DSOURCE</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: Delete DataSource</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <TYP>RSAOT_OLTPSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <TYP>RSAOT_OBJVERS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <TYP>RSAOT_T_MESSAGES</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>FAILED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAILED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_MAINTAIN_DSOURCE</FUNCNAME>
+     <SHORT_TEXT>Noch nicht verfügbar</SHORT_TEXT>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_RESET_DELTA</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: Delta zurücksetzen</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <DBFIELD>ROOSPRMSC-OLTPSOURCE</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <DBFIELD>ROOSPRMSC-RLOGSYS</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DELETE_ALL</PARAMETER>
+       <TYP>RSAOT_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>FAILED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DELETE_ALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAILED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_SAVE_DATASOURCE</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: Save DataSource</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_OSOURCE</PARAMETER>
+       <TYP>RSAOT_OLTPSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <TYP>RSAOT_OBJVERS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_EXSTRU</PARAMETER>
+       <TYP>RSAOT_STRUCTURE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_OSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_EXSTRU</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_TRANSPORT_DSOURCE</FUNCNAME>
+     <SHORT_TEXT>Template Funktionsbaustein - Event: Transport DataSource</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <TYP>RSAOT_OLTPSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <TYP>RSAOT_OBJVERS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_EXSTRU</PARAMETER>
+       <TYP>RSAOT_STRUCTURE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_T_KO200</PARAMETER>
+       <TYP>RSAOT_T_KO200</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_T_E071K</PARAMETER>
+       <TYP>RSAOT_T_E071K</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OBJVERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_EXSTRU</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_KO200</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_E071K</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_EVENT_ZDD_REPLAY</FUNCNAME>
+     <SHORT_TEXT>Noch nicht verfügbar</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <DBFIELD>ROOSPRMSC-INITRNR</DBFIELD>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_S_OLTPSOURCE</PARAMETER>
+       <TYP>RSAOT_S_OSOURCE</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_S_OLTPSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_GEN_HIERARCHY_CATALOG</FUNCNAME>
+     <SHORT_TEXT>BW30-Template: Übertragung eines gen. Hierarchieverzeichnis (ab BW 3.0)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_DATASOURCE</PARAMETER>
+       <TYP>RSAOT_OLTPSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <TYP>RSAP_S_HIER_LIST</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <TYP>RSAP_T_HIERS</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_SELECT</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>APPLICATION_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_DATASOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_SELECT</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>APPLICATION_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_GEN_HIERARCHY_TRANSFER</FUNCNAME>
+     <SHORT_TEXT>BW30-Template: Übertragung einer gen. Hierarchietabellen mit Inhalt (BW30)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OSOURCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-ISOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_S_INTERFACE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIER_LIST</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_REQUEST-RCVPRN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_PACKAGES</PARAMETER>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_S_HEADER</PARAMETER>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIETEXT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_FOLDERT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_SELECT</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_TAB_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>APPLICATION_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RLOGSYS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PACKAGES</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_S_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 015</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 016</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 017</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_SELECT</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 018</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 019</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_TAB_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 020</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>APPLICATION_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 021</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_HIERARCHY_CATALOG_HCLASS</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung eines Hierarchieverzeichnis</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIER_LIST</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <TYP>RSAP_T_HIERS</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_SELECT</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>APPLICATION_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requested Basic Characteristic/Hierarchy Class</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Hierarchy Control Indicator for Basic Characteristics</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Required</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_SELECT</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>APPLICATION_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_HIERARCHY_TRANSFR_HCLASS</FUNCNAME>
+     <SHORT_TEXT>Template: Übertragung einer Hierarchietabellen mit Inhalt</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <TYP>RSAP_S_HIER_LIST</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <TYP>RSAP_T_HIETEXT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <TYP>RSAP_T_HIENODE</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_FOLDERT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIEINTV</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_SELECT</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_TAB_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>APPLICATION_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requested Basic Characteristic/Hierarchy Class</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Hierarchy Control Indicator for Basic Characteristics</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Required</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_SELECT</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_TAB_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>APPLICATION_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_RSSH_HIERARCHY_CATALOG</FUNCNAME>
+     <SHORT_TEXT>nicht relevant</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIERS</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>DATA_MARTS_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requested Basic Characteristic/Hierarchy Class</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Hierarchy Control Indicator for Basic Characteristics</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Required</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIERS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATA_MARTS_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZRSAX_RSSH_HIERARCHY_TRANSFER</FUNCNAME>
+     <SHORT_TEXT>nicht relevant</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEBAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIEFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_S_HIER_LIST</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SBIWA_T_LANGU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIETEXT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIENODE</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_FOLDERT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RSAP_T_HIEINTV</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_CHABASNM_HCLASS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_FLAG</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>INVALID_HIERARCHY_SELECT</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>LANGU_NOT_SUPPORTED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>HIERARCHY_TAB_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>DATA_MARTS_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_S_HIEBAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requested Basic Characteristic/Hierarchy Class</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIEFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Hierarchy Control Indicator for Basic Characteristics</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_S_HIERSEL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_LANGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Required</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIETEXT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIENODE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_FOLDERT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_HIEINTV</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_CHABASNM_HCLASS</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_FLAG</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_HIERARCHY_SELECT</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGU_NOT_SUPPORTED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HIERARCHY_TAB_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATA_MARTS_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_RSAX_STXL_ZOBJ_BBP_PD</FUNCNAME>
+     <SHORT_TEXT>STXL Extractor</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SRSC_S_IF_SIMPLE-REQUNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SRSC_S_IF_SIMPLE-DSOURCE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SRSC_S_IF_SIMPLE-MAXSIZE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SRSC_S_IF_SIMPLE-INITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SRSC_S_IF_SIMPLE-READONLY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <DEFAULT>SBIWA_C_FLAG_OFF</DEFAULT>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SBIWA_FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-T_SELECT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SRSC_S_IF_SIMPLE-T_FIELDS</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <DBSTRUCT>ZBI_SRM_BID_STXL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_MORE_DATA</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>ERROR_PASSED_TO_MESS_HANDLER</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUNR</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DSOURCE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXSIZE</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_INITFLAG</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_READ_ONLY</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REMOTE_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_T_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_T_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BW extraction on STXL</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MORE_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERROR_PASSED_TO_MESS_HANDLER</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

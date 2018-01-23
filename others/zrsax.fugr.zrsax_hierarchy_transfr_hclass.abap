@@ -1,0 +1,25 @@
+FUNCTION ZRSAX_HIERARCHY_TRANSFR_HCLASS.
+*"--------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(I_S_HIEBAS) TYPE  RSAP_S_HIEBAS
+*"     VALUE(I_S_HIEFLAG) TYPE  RSAP_S_HIEFLAG
+*"     VALUE(I_S_HIERSEL) TYPE  RSAP_S_HIER_LIST
+*"  TABLES
+*"      I_T_LANGU TYPE  SBIWA_T_LANGU
+*"      E_T_HIETEXT TYPE  RSAP_T_HIETEXT
+*"      E_T_HIENODE TYPE  RSAP_T_HIENODE
+*"      E_T_FOLDERT TYPE  RSAP_T_FOLDERT OPTIONAL
+*"      E_T_HIEINTV TYPE  RSAP_T_HIEINTV OPTIONAL
+*"  EXCEPTIONS
+*"      INVALID_CHABASNM_HCLASS
+*"      INVALID_HIERARCHY_FLAG
+*"      INVALID_HIERARCHY_SELECT
+*"      LANGU_NOT_SUPPORTED
+*"      HIERARCHY_TAB_NOT_FOUND
+*"      APPLICATION_ERROR
+*"--------------------------------------------------------------------
+
+
+
+ENDFUNCTION.
